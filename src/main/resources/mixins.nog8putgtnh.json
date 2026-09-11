@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8.5-GTNH",
+  "package": "com.murthinext.nog8putgtnh.mixins",
+  "refmap": "mixins.nog8putgtnh.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [],
+  "client": [
+    "MixinGuiContainer",
+    "MixinPlayerControllerMP"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
