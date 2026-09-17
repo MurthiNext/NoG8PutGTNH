@@ -28,11 +28,8 @@ public final class OffhandPlacement {
     public static void load(File configFile) {
         configuration = new Configuration(configFile);
         configuration.load();
-        allowOffhandPlacement = configuration.getBoolean(
-            KEY,
-            Configuration.CATEGORY_GENERAL,
-            false,
-            "是否允许副手手持方块时将其放置到世界中（红=禁止，绿=允许）。可在背包界面副手槽右上角的 2x2 按钮切换。");
+        allowOffhandPlacement = configuration
+            .getBoolean(KEY, Configuration.CATEGORY_GENERAL, false, "是否允许副手手持方块时将其放置到世界中。");
         if (configuration.hasChanged()) {
             configuration.save();
         }

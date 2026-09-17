@@ -5,6 +5,8 @@ import java.io.File;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.murthinext.nog8putgtnh.client.OffhandPlacementKeybind;
+
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -23,6 +25,10 @@ public class NoG8PutGTNH {
     public void preInit(FMLPreInitializationEvent event) {
         File configFile = new File(event.getModConfigurationDirectory(), MODID + ".cfg");
         OffhandPlacement.load(configFile);
+        if (event.getSide()
+            .isClient()) {
+            OffhandPlacementKeybind.register();
+        }
         LOG.info(
             "NoG8PutGTNH loaded, offhand block placement is {}",
             OffhandPlacement.isAllowed() ? "allowed" : "disabled");
